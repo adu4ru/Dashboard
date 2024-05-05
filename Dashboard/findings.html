@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Research Paper Dashboard</title>
+<style>
+  /* CSS styles */
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+  header {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .container {
+    display: flex;
+  }
+
+  .sidebar {
+    flex: 1;
+    background-color: #f2f2f2;
+    padding: 20px;
+  }
+
+  .main-content {
+    flex: 4;
+    padding: 20px;
+  }
+
+  .data-visualization {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+  }
+</style>
+</head>
+<body>
+  <header>
+    <h1>Research Paper Dashboard</h1>
+  </header>
+  <div class="container">
+    <div class="sidebar">
+      <h2>Filters</h2>
+      <!-- Add filters here if needed -->
+    </div>
+    <div class="main-content">
+      <h2>Data Representation</h2>
+      <div class="data-visualization">
+        <canvas id="pieChart" width="400" height="400"></canvas> <!-- Placeholder for pie chart -->
+      </div>
+    </div>
+  </div>
+<script>
+  // JavaScript code
+  // Dummy data for the pie chart
+  const data = {
+    labels: ['Category 1', 'Category 2', 'Category 3'],
+    datasets: [{
+      data: [30, 40, 30], // Dummy percentages
+      backgroundColor: [
+        'rgb(255, 99, 132)',
+        'rgb(54, 162, 235)',
+        'rgb(255, 205, 86)'
+      ],
+      hoverOffset: 4
+    }]
+  };
+
+  // Get the canvas element
+  const ctx = document.getElementById('pieChart').getContext('2d');
+
+  // Create the pie chart
+  const pieChart = new Chart(ctx, {
+    type: 'pie',
+    data: data,
+  });
+</script>
+</body>
+</html>
